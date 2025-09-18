@@ -1,7 +1,9 @@
-/* CSS BY YOUR NAME */
+/* CSS BY Azriele Tingle */
+
 
 /* IMPORTED FONTS*/
 /* IMPORT "INTER" FROM GOOGLE FONTS"
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 /* CSS RESET */
 /* http://meyerweb.com/eric/tools/css/reset/
@@ -63,7 +65,45 @@ table {
 }
 
 /* GLOBAL STYLES (MOBILE FIRST (SMALL) */
+header{
+    display: flex;
+    color: #007BFF;
+    background-color: #000000;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 5px 5px #007BFF;
+}
 
+body{
+    font-family: var(--font);
+}
+
+h1{
+    font-family: 'Inter';
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    gap: 0.75rem;
+}
+
+h1 .logo{
+    width: 2rem;
+    height: 2rem;
+}
+
+nav ul{
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: #007BFF;
+}
 /* MIN-WIDTH OF THE PAGE SHOULD NOT GO BELOW 400PX */
 
 /* ADD A DIV WITH THE CLASS OF CONTAINER TO EVERY CONTENT CONTAINER THIS IS ALLOW THE BASE ELEMENTS TO BE 100% WIDTH, BUT CONSTRAIN THE ACTUAL CONTENT TO 90% */
@@ -74,20 +114,46 @@ table {
 }
 
 /* ADD TO "INNOVATION & INVESTMENT SECTION (Photo by Kevin Matos on Unsplash) */
- {
+ #innovation{
     background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('images/vanguard-hero.jpg') no-repeat center center/cover;
     height: 80vh;
-    display: grid;
+    display: flex;
+    flex-direction: column;
     place-items: center;
     text-align: center;
-    padding: 1rem;
+    justify-content: center;
     overflow: hidden;
+    position: relative;
+    color: #EAEAEA;
 }
 
-/* ADD FLOATING SVG LOGO BEFORE THE H1 */
- {
-    content: "";
+#innovation h2{
+    font-weight: bold;
+    margin-bottom: 10px;
+}
 
+#innovation button{
+    padding: 0.5rem 0.5rem;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #EAEAEA;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#services h2{
+    font-weight: bold;
+    margin-top: 2rem;
+    padding
+}
+
+
+/* ADD FLOATING SVG LOGO BEFORE THE H1 */
+ h1:: before{
+    content: "";
+    position: absolute;
     left:-.5rem;
     width: 3.75rem;
     height: 3.75rem;
@@ -113,7 +179,7 @@ table {
     background: var(--charcoal);
     border-radius: 10px;
     position: relative;
-    transition: ;
+    transition: height 0.5s ease;
     height: 0;
 }
 /* THIS ONE IS DONE FOR YOU */
