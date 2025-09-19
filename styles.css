@@ -79,6 +79,7 @@ header{
 
 body{
     font-family: var(--font);
+    min-width: 400px;
 }
 
 h1{
@@ -87,6 +88,7 @@ h1{
     font-size: 1.5rem;
     font-weight: bold;
     gap: 0.75rem;
+    margin-bottom: 2rem;
 }
 
 h1 .logo{
@@ -96,13 +98,20 @@ h1 .logo{
 
 nav ul{
     display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
+    flex-direction: row;
+    gap: 1rem;
+    font-weight: bold;
 }
 
 nav ul li a{
     text-decoration: none;
     color: #007BFF;
+    padding: 1rem;
+}
+
+nav ul li a:hover{
+    background-color: #007BFF;
+    color: #000000;
 }
 /* MIN-WIDTH OF THE PAGE SHOULD NOT GO BELOW 400PX */
 
@@ -125,11 +134,18 @@ nav ul li a{
     overflow: hidden;
     position: relative;
     color: #EAEAEA;
+    padding: 2rem;
 }
 
 #innovation h2{
     font-weight: bold;
-    margin-bottom: 10px;
+    margin-bottom: 1rem;
+}
+
+#innovation p{
+    max-width: 600px;
+    font-size: 0.75em;
+    margin: 0 auto;
 }
 
 #innovation button{
@@ -143,15 +159,38 @@ nav ul li a{
     cursor: pointer;
 }
 
+#services{
+    padding: 2rem;
+}
+
 #services h2{
     font-weight: bold;
-    margin-top: 2rem;
-    padding
+    margin-bottom: 0.5rem;
+}
+
+#services p{
+    font-size: 0.75em;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.services-grid{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    max-width: 1000px
+}
+
+.services-grid article{
+    background-color: #007BFF;
+    color: #EAEAEA;
+    padding: 1rem;
+    border-radius: 5px;
 }
 
 
 /* ADD FLOATING SVG LOGO BEFORE THE H1 */
- h1:: before{
+ h1 .logo before{
     content: "";
     position: absolute;
     left:-.5rem;
@@ -159,6 +198,85 @@ nav ul li a{
     height: 3.75rem;
     background: url('images/vanguard-logo.svg') no-repeat center/contain;
 
+}
+
+#results{
+    background-color: #007BFF;
+    color: #EAEAEA;
+    padding: 2rem;
+}
+
+#results h2{
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+#results p{
+    font-size: 0.75em;
+    margin-bottom: 0.5rem;
+}
+
+#results h3{
+    font-weight: bold;
+}
+
+#results table{
+    width: 50%;
+    margin: 2rem 0;
+    text-align: center;
+    font-size: 0.5em;
+}
+
+#results table th, #results table td{
+    padding: 0.75rem;
+    border: 1px solid #333333;
+    background-color: #000000;
+}
+
+#contact{
+    background-color: #000000;
+    color: #EAEAEA;
+    padding: 2rem;
+}
+
+#contact h2{
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+#contact p{
+    font-size: 0.75em;
+    margin-bottom: 0.5rem;
+}
+
+form label{
+    display: block;
+    margin-top: 1rem;
+}
+
+#contact form{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+#contact button{
+    background-color: #007BFF;
+    border: none;
+    border-radius: 5px;
+}
+
+footer{
+    background-color: #000000;
+    color: #EAEAEA;
+    text-align: center;
+    font-size: 0.75em;
+    line-height: 1.5em;
+}
+
+footer a{
+    text-decoration: none;
+    color: #EAEAEA;
 }
 /* THIS ONE IS DONE FOR YOU */
 #bar-chart {
@@ -206,22 +324,55 @@ nav ul li a{
     animation: stepUp 1s ease-in-out forwards;
 }
 
-
+/* I cannot for the life of me figure out how to get the media queries down this time. it's such a struggle ): */ 
 /* MEDIA QUERIES (MEDIUM) */ 
+@media (min-width: 800px){
+    .services-grid{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .services-grid h2{
+        grid-column: 1 / -1;
+    }
 
     #results {
+        display: grid;
         grid-template-columns: 1fr 1fr;
+        gap: 2rem;
     }
-    .results-container {
-        flex-direction: row;
-        justify-content: space-between;
-    }
-    .results-table {
+
+
+    #results table {
         width: 50%;
     }
+
+    #results table tr td, #results table tr th{
+        padding: 1.5rem 1rem;
+    }
+
+    nav{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    nav ul{
+        display: flex;
+    }
+
     .bar-chart {
         width: 50%;
     }
-
+}
 
 /* MEDIA QUERIES (LARGE) */
+@media (min-width: 1024px){
+    .services-grid{
+        grid-template-columns: repeat(3, 1fr);
+        align-content: center;
+        margin: 0 auto;
+    }
+}
